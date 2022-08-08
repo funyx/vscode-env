@@ -25,6 +25,9 @@ CMD [ "sleep", "infinity" ]
 COPY ./.ssh /home/vscode/.ssh
 RUN chown -R vscode:vscode /home/vscode/.ssh
 RUN chmod 400 /home/vscode/.ssh/**
+COPY ./.aws /home/vscode/.aws
+RUN chown -R vscode:vscode /home/vscode/.aws
+RUN chmod 400 /home/vscode/.aws/**
 
 RUN mkdir -p /home/vscode/.vscode-server/extensions \
     /home/vscode/.vscode-server-insiders/extensions \
