@@ -12,6 +12,8 @@ ARG USERNAME=automatic
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+RUN export DEBIAN_FRONTEND=noninteractive
+
 COPY library-scripts/*.sh /tmp/library-scripts/
 
 RUN apt-get update \
@@ -34,3 +36,6 @@ RUN mkdir -p /home/vscode/.vscode-server/extensions \
     && chown -R vscode \
     /home/vscode/.vscode-server \
     /home/vscode/.vscode-server-insiders
+
+RUN apt-get -y install --no-install-recommends \
+    jq

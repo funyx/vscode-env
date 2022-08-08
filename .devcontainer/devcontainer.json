@@ -24,7 +24,9 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-azuretools.vscode-docker"
+				"amazonwebservices.aws-toolkit-vscode",
+				"ms-azuretools.vscode-docker",
+				"eamodio.gitlens"
 			]
 		}
 	}
