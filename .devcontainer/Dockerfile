@@ -22,6 +22,10 @@ RUN apt-get update \
 ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
 CMD [ "sleep", "infinity" ]
 
+COPY ./.ssh /home/vscode/.ssh
+RUN chown -R vscode:vscode /home/vscode/.ssh
+RUN chmod 400 /home/vscode/.ssh/**
+
 RUN mkdir -p /home/vscode/.vscode-server/extensions \
     /home/vscode/.vscode-server-insiders/extensions \
     && chown -R vscode \
